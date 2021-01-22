@@ -19,29 +19,39 @@
             font-size: larger;
         }
     </style>
-</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize.js"></script>
-
-<body>
+<script>
+    $(document).ready(function () {
+      $('.fixed-action-btn').openFAB();
+$('.fixed-action-btn').closeFAB();
+$('.fixed-action-btn.toolbar').openToolbar();
+$('.fixed-action-btn.toolbar').closeToolbar();
+      $('.tooltipped').tooltip({delay: 50});
+  })
+</script>
+</head>
+<body oncontextmenu="return false;">
     <main class="container">
         <div class="oui-interaction center-align">
-            <div class="row">
-                <a href="Apr21.html"><i class="material-icons col s4 m4 black-text"
-                        style="font-size: 45px;">chevron_left</i></a>
-                        <div class="col s4 m4">
-                            <h5>MAY <span class="grey-text text-darken-4" style="font-size: small;">2021</span></h5>
-                        </div>
-                <a href="Jun21.html"><i class="material-icons col s4 m4 black-text"
-                        style="font-size: 45px;">chevron_right</i></a>
-            </div>
             <!-- Interaction area -->
             <div class="fixed-action-btn">
-                <a class="btn-floating btn-large teal lighten-1" href="index.html">
-                    <i class="large material-icons">date_range</i>
+                <a class="btn-floating btn-large teal lighten-1 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Menu">
+                    <i class="large material-icons">more_vert</i>
                 </a>
+                <ul>
+                    <li><a class="btn-floating btn tooltipped" data-position="top" data-delay="50" data-tooltip="About" href="#!"><i class="material-icons">info</i></a></li>
+                    <li><a class="btn-floating btn tooltipped" data-position="left" data-delay="50" data-tooltip="Year" href="index.html"><i class="material-icons">home</i></a></li>
+                    <li><a class="btn-floating btn tooltipped" data-position="left" data-delay="50" data-tooltip="Events" href="event21.html"><i class="material-icons">view_list</i></a></li>
+                </ul>
             </div>
             <div class="oui-bubble">
-                <div class="container">
+                <ul class="pagination">
+                    <li><a href="Apr21.html"><i class="material-icons left">chevron_left</i></a></li>
+                    <li><span style="font-size: xx-large;">MAY </span><span class="grey-text text-darken-4" style="font-size: medium;">2021</span></li>
+                    <li><a href="Jun21.html"><i class="material-icons right">chevron_right</i></a></li>
+                </ul><br>
+            <div class="oui-bubble">
                     <table class="centered" style="border: none;">
                         <tbody>
                             <tr>
@@ -204,7 +214,7 @@
                 </div>
             </div>
             <h5>One UI Calendar</h5>
-            <h6>2021.1.9 beta</h6>
+            <h6>2021.2 beta</h6>
         </div><br><br>
     </main>
 </body>
