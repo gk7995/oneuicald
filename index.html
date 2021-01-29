@@ -24,30 +24,38 @@
             font-family: 'SamsungOne 400';
         }
     </style>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="materialize.js"></script>
-<script>
-    $(document).ready(function () {
-      $('.fixed-action-btn').openFAB();
-$('.fixed-action-btn').closeFAB();
-$('.fixed-action-btn.toolbar').openToolbar();
-$('.fixed-action-btn.toolbar').closeToolbar();
-      $('.tooltipped').tooltip({delay: 50});
-  })
-</script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="materialize.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.fixed-action-btn').openFAB();
+            $('.fixed-action-btn').closeFAB();
+            $('.fixed-action-btn.toolbar').openToolbar();
+            $('.fixed-action-btn.toolbar').closeToolbar();
+            $('.tooltipped').tooltip({
+                delay: 50
+            });
+        })
+    </script>
 </head>
+
 <body oncontextmenu="return false;">
     <main class="container">
         <div class="oui-interaction center-align">
             <!-- Interaction area -->
             <div class="fixed-action-btn">
-                <a class="btn-floating btn-large teal lighten-1 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Menu">
+                <a class="btn-floating btn-large teal lighten-1 btn tooltipped" data-position="left" data-delay="50"
+                    data-tooltip="Menu">
                     <i class="large material-icons">more_vert</i>
                 </a>
                 <ul>
-                    <li><a class="btn-floating btn tooltipped" data-position="top" data-delay="50" data-tooltip="About" href="#!"><i class="material-icons">info</i></a></li>
-                    <li><a class="btn-floating btn tooltipped" data-position="left" data-delay="50" data-tooltip="Current Month" href="Jan21.html"><i class="material-icons">date_range</i></a></li>
-                    <li><a class="btn-floating btn tooltipped" data-position="left" data-delay="50" data-tooltip="Events" href="event21.html"><i class="material-icons">view_list</i></a></li>
+                    <li><a class="btn-floating btn tooltipped" data-position="top" data-delay="50" data-tooltip="About"
+                            href="#!"><i class="material-icons">info</i></a></li>
+                    <li><a class="btn-floating btn tooltipped" data-position="left" data-delay="50"
+                            data-tooltip="Current Month" href="Jan21.html"><i class="material-icons">date_range</i></a>
+                    </li>
+                    <li><a class="btn-floating btn tooltipped" data-position="left" data-delay="50"
+                            data-tooltip="Events" href="event21.html"><i class="material-icons">view_list</i></a></li>
                 </ul>
             </div>
             <div class="oui-bubble">
@@ -601,8 +609,8 @@ $('.fixed-action-btn.toolbar').closeToolbar();
                     </div>
                 </div>
             </div>
-            <h5>One UI Calendar</h5>
-            <h6>2021.2</h6>
+
+
         </div>
     </main>
 </body>
