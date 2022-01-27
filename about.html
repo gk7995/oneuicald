@@ -1,0 +1,263 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <title>About - One UI Calendar</title>
+  <link rel="stylesheet" href="OneUI/oui.min.css">
+  <link rel="stylesheet" href="materialize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" href="images/OUC.ico">
+  <style>
+    @font-face {
+      font-family: 'SamsungOne 400';
+      src: local('SamsungOne 400'), url('SamsungOne-400.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Material Icons';
+      src: local('Material Icons'), url('matico.woff2') format('woff2');
+    }
+
+    * {
+      font-family: 'SamsungOne 400';
+      font-size: larger;
+    }
+
+    img {
+      pointer-events: none;
+    }
+
+    .oui-button {
+      font-family: 'SamsungOne 400';
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="materialize.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    $(document).ready(function () {
+      $('.fixed-action-btn').openFAB();
+      $('.fixed-action-btn').closeFAB();
+      $('.fixed-action-btn.toolbar').openToolbar();
+      $('.fixed-action-btn.toolbar').closeToolbar();
+      $('.tooltipped').tooltip({
+        delay: 50
+      });
+    })
+    $(document).ready(function () {
+      $('.modal').modal();
+      $('#modal').modal();
+    })
+  </script>
+</head>
+
+<body oncontextmenu="return false;" onload="Materialize.fadeInImage('#image')">
+  <main class="containr">
+    <div class="oui-viewing center-align">
+      <h4>One UI Calendar</h4>
+      <h5 class="grey-text text-darken-1">Version 2022.3</h5>
+    </div>
+    <div class="oui-interaction center-align">
+      <!-- Interaction area -->
+      <div class="oui-bubble">
+        <div class="fixed-action-btn">
+          <a class="btn-floating btn-large teal lighten-1 btn tooltipped pulse z-depth-5 modal-trigger"
+            data-position="top" data-delay="50" data-tooltip="Menu" href="#modal">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
+        <!--Menu-->
+        <div id="modal" class="modal bottom-sheet right-align">
+          <div class="modal-content">
+            <ul class="collection left-align" style="border-width: 0px;">
+              <li class="collection-item avatar grey lighten-2 oui-bubble z-depth-1"
+                onclick="location.href='index.html'">
+                <a href="#!"><i class="fas fa-calendar circle teal lighten-1"></i></a>
+                <p style="font-size: x-large;">Home - Year View</p>
+                <p>Back to Home</p>
+              </li>
+              <li class="collection-item transparent"></li>
+            </ul>
+          </div>
+        </div>
+        <h5>Website Developed by</h5>
+        <img src="images/GK Logo New 2020 whitebg.png" class="responsive-img" alt="GK" width="20%" height="20%"
+          id="image">
+        <h5>Gaurav Khatri</h5>
+        <div class="row">
+          <div class="col s1 m1"></div>
+          <div class="col s4 m4 oui-button waves-effect"><a href="about.html#new" class="black-text">What's New</a>
+          </div>
+          <div class="col s2 m2"></div>
+          <div class="col s4 m4 oui-button waves-effect"><a href="about.html#term" class="black-text">Feedback!!</a>
+          </div>
+          <div class="col s1 m1"></div>
+        </div><br><br><br><br><br>
+        <hr style="border: dashed 0.5px black;">
+        <table class="bordered">
+          <thead>
+            <tr id="new">
+              <th><b>Version</b></th>
+              <th><b>Release Notes</b></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022.3</td>
+              <td>Added "Tithis" of the Month, Bugs fixed</td>
+            </tr>
+            <tr>
+              <td>2022.2.9</td>
+              <td>Added "Week view" in Quick Links too, Bugs fixed</td>
+            </tr>
+            <tr>
+              <td>2022.2.8</td>
+              <td>Added "Year Series, Day View" Quick Links & UI changes</td>
+            </tr>
+            <tr>
+              <td>2022.2.7</td>
+              <td>Added 200 years & UI changes & optimization</td>
+            </tr>
+            <tr>
+              <td>2021.2.6</td>
+              <td>Added One UI viewing which brings down main content to mid screen & makes easier to reach to various
+                options</td>
+            </tr>
+            <tr>
+              <td>2021.2.5</td>
+              <td>Added Week, Day View with Sunrise/set timings (Click on day/week to view)</td>
+            </tr>
+            <tr>
+              <td>2021.2.4</td>
+              <td>Some Data loading Bugs fixed</td>
+            </tr>
+            <tr>
+              <td>2021.2.3</td>
+              <td>Some UI fixes</td>
+            </tr>
+            <tr>
+              <td>2021.2.2</td>
+              <td>Added Days against each Date of Events page</td>
+            </tr>
+            <tr>
+              <td>2021.2.1</td>
+              <td>Added the missing About page, navigate bugs fixed</td>
+            </tr>
+            <tr>
+              <td>2021.2</td>
+              <td>"Tithis" Tray pulled off (as Tips are being shown)</td>
+            </tr>
+            <tr>
+              <td>2020.1.8</td>
+              <td>Floating Menu redesigned, Tips added to "Tithis", days, Menu</td>
+            </tr>
+            <tr>
+              <td>2020.1.7</td>
+              <td>Bugs related to width/ height between days fixed</td>
+            </tr>
+            <tr>
+              <td>2020.1.6</td>
+              <td>Fixed Month-to-Month Navigation</td>
+            </tr>
+            <tr>
+              <td>2020.1.5</td>
+              <td>Added up some missed out Events, including Sindhi people Fests</td>
+            </tr>
+            <tr>
+              <td>2020.1.4</td>
+              <td>Events list data & look fixed, Floating Button added</td>
+            </tr>
+            <tr>
+              <td>2020.1.3</td>
+              <td>Introducing "Tithis", added with respective dates</td>
+            </tr>
+            <tr>
+              <td>2020.1.2</td>
+              <td>Events introduced with event count, click to view them</td>
+            </tr>
+            <tr>
+              <td>2020.1.1</td>
+              <td>Home page & Week Nos added</td>
+            </tr>
+            <tr>
+              <td>2020.1</td>
+              <td>Initial Release, Months added.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h4 id="term" class="center">Your Valuable Feedback</h4>
+        <h6 class="center"><span class="red-text">Required fields</span></h6>
+        <div class="row">
+          <form method="POST" autocomplete="off" name="google-sheet">
+            <div class="form">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" name="Name" type="text" required>
+                <label for="icon_prefix">Name <span class="red-text">*</span></label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">email</i>
+                <input id="icon_prefix" name="Email" type="email" required>
+                <label for="icon_prefix">Email <span class="red-text">*</span></label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">message</i>
+                <input id="icon_prefix" name="Message" type="text">
+                <label for="icon_prefix">Message</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="msg" name="submit" type="submit" class="oui-button black-text">
+              </div>
+            </div>
+        </div>
+        </form>
+      </div>
+      <p class="grey-text text-darken-1">&copy; 2021, All Rights reserved.</p>
+    </div><br>
+  </main>
+  <script>
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbyNWNXyIv0Cx8sMALZMW3RRSjY1Wis-NWevN0gzqnNJL2Bs07CFQqYPaJc_MFEtuulx/exec'
+    const form = document.forms['google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(response => alert("Thanks for your valuable Feedback..! Stay tuned for further updates"))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+
+</html>

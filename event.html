@@ -1,0 +1,649 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta http-equiv="refresh" content="120">
+    <title>Events 2022 - One UI Calendar</title>
+    <link rel="stylesheet" href="OneUI/oui.min.css">
+    <link rel="stylesheet" href="materialize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
+    <link rel="icon" href="images/OUC.ico">
+    <style>
+        @font-face {
+            font-family: 'SamsungOne 400';
+            src: local('SamsungOne 400'), url('SamsungOne-400.woff') format('woff');
+        }
+
+        * {
+            font-family: 'SamsungOne 400';
+            font-size: larger;
+        }
+
+        .oui-button {
+            font-family: 'SamsungOne 400';
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="materialize.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+        $(document).ready(function () {
+            $('.fixed-action-btn').openFAB();
+            $('.fixed-action-btn').closeFAB();
+            $('.fixed-action-btn.toolbar').openToolbar();
+            $('.fixed-action-btn.toolbar').closeToolbar();
+            $('.tooltipped').tooltip({
+                delay: 50
+            });
+        })
+        $(document).ready(function () {
+            $('.modal').modal();
+            $('#modal').modal();
+        })
+    </script>
+</head>
+
+<body oncontextmenu="return false;">
+    <main class="containr">
+        <div class="oui-viewing center-align">
+            <h4>EVENTS VIEW</h4>
+            <h5 class="grey-text text-darken-1">Current Month: January</h5>
+            <h6>Current Year: 2022</h6>
+        </div>
+        <div class="oui-interaction center-align">
+            <!-- Interaction area -->
+            <div class="oui-bubble" id="view">
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large teal lighten-1 btn tooltipped pulse z-depth-5 modal-trigger"
+                        data-position="top" data-delay="50" data-tooltip="Menu" href="#modal">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <!--Menu-->
+                <div id="modal" class="modal bottom-sheet right-align">
+                    <div class="modal-content">
+                        <ul class="collection left-align" style="border-width: 0px;">
+                            <li class="collection-item avatar grey lighten-2 oui-bubble z-depth-1"
+                                onclick="location.href='index.html'">
+                                <a href="#!"><i class="fas fa-calendar circle teal lighten-1"></i></a>
+                                <p style="font-size: x-large;">Year View</p>
+                                <p>Change the View to Year 2022</p>
+                            </li>
+                            <ul class="collection left-align" style="border-width: 0px;">
+                                <li class="collection-item avatar grey lighten-2 oui-bubble z-depth-1"
+                                    onclick="location.href='about.html'">
+                                    <a href="#!"><i class="fas fa-info circle teal lighten-1"></i></a>
+                                    <p style="font-size: x-large;">About</p>
+                                    <p>About this Website</p>
+                                </li>
+                                <li class="collection-item transparent"></li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="oui-bubble">
+                    <h5>2022</h5>
+                    <table class="highlight">
+                        <tbody>
+                            <tr id="ja22">
+                                <td colspan="4"><b>JANUARY &#8249;&#8249;&#8249; CURRENT MONTH</b></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>SUN</td>
+                                <td>Guru Govind Singh Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>WED</td>
+                                <td>Swami Vivekanand Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>THU</td>
+                                <td>Lohri/ Lal Lohi (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>FRI</td>
+                                <td>Makar Sankranti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>FRI</td>
+                                <td>Pongal</td>
+                                <td>&#10103;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>FRI</td>
+                                <td>Tirmoori (Sindhi)/ Til-Gud (Marathi)</td>
+                                <td>&#10104;</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td>SUN</td>
+                                <td>Netaji Subhashchandra Bose Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>WED</td>
+                                <td>Republic Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>SUN</td>
+                                <td>Mahatma Gandhi Punyatithi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="f22">
+                                <td colspan="4"><b>FEBRUARY</b></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>SAT</td>
+                                <td>Vasant Panchami</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>MON</td>
+                                <td>Valentines Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>SAT</td>
+                                <td>Shivaji Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="m22">
+                                <td colspan="4"><b>MARCH</b></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>TUE</td>
+                                <td>Maha Shivratri</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>TUE</td>
+                                <td>Womens Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>THU</td>
+                                <td>Holi (Dahan)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>FRI</td>
+                                <td>Holi 2nd Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>TUE</td>
+                                <td>Rang Panchami</td>
+                                <td>&#10103;</td>
+                            </tr>
+                            <tr id="a22">
+                                <td colspan="4"><b>APRIL</b></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>SAT</td>
+                                <td>Gudi Padwa/ Cheti Chand (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>SUN</td>
+                                <td>Ram Navmi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>THU</td>
+                                <td>Baisakhi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>THU</td>
+                                <td>BR Ambedkar Jayanti</td>
+                                <td>&#10103;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>THU</td>
+                                <td>Mahavir Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>FRI</td>
+                                <td>Good Friday</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>SAT</td>
+                                <td>Hanuman Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="my22">
+                                <td colspan="4"><b>MAY</b></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>SUN</td>
+                                <td>Maharashtra Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>TUE</td>
+                                <td>Akshay Tritiya/ Akhan Teej (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>SUN</td>
+                                <td>Mothers Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>SUN</td>
+                                <td>Ravindranath Tagore Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>FRI</td>
+                                <td>Sri Sri Ravishankar Birthday</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>MON</td>
+                                <td>Buddha Purnima</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>TUE</td>
+                                <td>Naarad Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>MON</td>
+                                <td>Shani Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="j22">
+                                <td colspan="4"><b>JUNE</b></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>THU</td>
+                                <td>Maharana Pratap Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>TUE</td>
+                                <td>St. Kabir Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>SUN</td>
+                                <td>Fathers Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>TUE</td>
+                                <td>International Yoga Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="ju22">
+                                <td colspan="4"><b>JULY</b></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>FRI</td>
+                                <td>Jagannath Yatra Begins</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>WED</td>
+                                <td>Guru Purnima</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>SAT</td>
+                                <td>Chaliha Start (Sindhi, Ulhasnagar-2)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>SUN</td>
+                                <td>Chaliha Start (Sindhi, Ulhasnagar-5)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="au22">
+                                <td colspan="4"><b>AUGUST</b></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>TUE</td>
+                                <td>Naag Panchami</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>THU</td>
+                                <td>Nandi Thadri (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>THU</td>
+                                <td>Naariyal Purnima</td>
+                                <td>&#10103;</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>THU</td>
+                                <td>Raksha Bandhan</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>MON</td>
+                                <td>Independence Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>MON</td>
+                                <td>Pateti</td>
+                                <td>&#10103;</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>THU</td>
+                                <td>Thadri (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>FRI</td>
+                                <td>Janmashtmi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>FRI</td>
+                                <td>Dahi-Handi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>WED</td>
+                                <td>Chaliha End (Sindhi, Ulhasnagar-2)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>WED</td>
+                                <td>An Matyo (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>TUE</td>
+                                <td>Teej/ Teejri (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td>WED</td>
+                                <td>Ganesh Chaturthi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="s22">
+                                <td colspan="4"><b>SEPTEMBER</b></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>FRI</td>
+                                <td>Chaliha End (Sindhi, Ulhasnagar-5)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SAT</td>
+                                <td>Sagra Bandhan (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>MON</td>
+                                <td>Teachers Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>FRI</td>
+                                <td>Ananta Chaturdashi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>SAT</td>
+                                <td>Shiradh Start</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>WED</td>
+                                <td>Hindi Diwas</td>
+                                <td>&#10103;</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>SUN</td>
+                                <td>Mahalakshmi Vrat End (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>SAT</td>
+                                <td>Shiradh End</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>SUN</td>
+                                <td>Navratri Start</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="o22">
+                                <td colspan="4"><b>OCTOBER</b></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>SUN</td>
+                                <td>Mahatma Gandhi Jayanti & Lal Bahadur Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>MON</td>
+                                <td>Durga Ashtami</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>TUE</td>
+                                <td>Maha Navmi</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>WED</td>
+                                <td>Vijaya Dashmi - Dussehra</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>SUN</td>
+                                <td>Valmiki Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>THU</td>
+                                <td>Karva Chauth</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td>SUN</td>
+                                <td>Dhanteras</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>MON</td>
+                                <td>Deepawali Laxmi Pujan</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>WED</td>
+                                <td>Bhaidooj</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td>THU</td>
+                                <td>Prabhat Pheri (Ulhasnagar)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>SUN</td>
+                                <td>Chhath Puja</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td>MON</td>
+                                <td>Sardar Vallabhbhai Patel Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="n22">
+                                <td colspan="4"><b>NOVEMBER</b></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>TUE</td>
+                                <td>Gop Ashtami (Sindhi)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>FRI</td>
+                                <td>Tulsi Vivah</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>TUE</td>
+                                <td>Guru Nanak Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>MON</td>
+                                <td>Childrens Day (Nehru Birthday)</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>THU</td>
+                                <td>Thanks Giving Day</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr id="d22">
+                                <td colspan="4"><b>DECEMBER</b></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SAT</td>
+                                <td>Geeta Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>WED</td>
+                                <td>Datt Jayanti</td>
+                                <td>&#10102;</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>SUN</td>
+                                <td>Christmas</td>
+                                <td>&#10102;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><br>
+    </main>
+</body>
+
+</html>
