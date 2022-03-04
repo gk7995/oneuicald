@@ -67,14 +67,17 @@
             $('.modal').modal();
             $('#modal').modal();
         })
+        $(document).bind("contextmenu", function (e) {
+            return false;
+        });
     </script>
 </head>
 
-<body oncontextmenu="return false;">
+<body>
     <main class="containr">
         <div class="oui-viewing center-align">
             <h4>EVENTS VIEW</h4>
-            <h5 class="grey-text text-darken-1">Current Month: February</h5>
+            <h5 class="grey-text text-darken-1">Current Month: March</h5>
             <h6>Current Year: 2022</h6>
         </div>
         <div class="oui-interaction center-align">

@@ -67,10 +67,13 @@
             $('.modal').modal();
             $('#modal').modal();
         })
+        $(document).bind("contextmenu", function (e) {
+            return false;
+        });
     </script>
 </head>
 
-<body oncontextmenu="return false;" onload="location.href='ys17.html#view'">
+<body onload="location.href='ys17.html#view'">
     <main class="containr">
         <div class="oui-viewing center-align">
             <h4>One UI Calendar</h4>
