@@ -1,0 +1,72 @@
+
+                        <!--Nov22-->
+                        <div class="modal" id="Nov22">
+                            <div class="modal-content center">
+                                <table class="centered">
+                                    <tr>
+                                        <td><b>MON</b></td>
+                                        <td></td>
+                                        <td>7</td>
+                                        <td>14</td>
+                                        <td>21</td>
+                                        <td>28</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b><u>TUE</u></b></td>
+                                        <td><span class="teal lighten-1 white-text"
+                                            style="border-radius: 5px;">&nbsp;1&nbsp;</span></td>
+                                        <td>8</td>
+                                        <td>15</td>
+                                        <td>22</td>
+                                        <td>29</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>WED</b></td>
+                                        <td>2</td>
+                                        <td>9</td>
+                                        <td>16</td>
+                                        <td>23</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>THU</b></td>
+                                        <td>3</td>
+                                        <td>10</td>
+                                        <td>17</td>
+                                        <td>24</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>FRI</b></td>
+                                        <td>4</td>
+                                        <td>11</td>
+                                        <td>18</td>
+                                        <td>25</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>SAT</b></td>
+                                        <td>5</td>
+                                        <td>12</td>
+                                        <td>19</td>
+                                        <td>26</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="red-text"><b>SUN</b></td>
+                                        <td class="red-text">6</td>
+                                        <td class="red-text">13</td>
+                                        <td class="red-text">20</td>
+                                        <td class="red-text">27</td>
+                                        <td class="red-text"></td>
+                                    </tr>
+                                </table>
+                                <h6><u>IN THIS MONTH</u></h6>
+                                <h6><b>Ekadashi</b>: 4, 20 &nbsp;|&nbsp; <b>Full Moon (Poornima)</b>: 8
+                                    &nbsp;|&nbsp;
+                                    <b>Ganesh Sankashti Chaturthi</b>: 12 &nbsp;|&nbsp; <b>Sankranti</b>: 17
+                                    &nbsp;|&nbsp;
+                                    <b>No Moon (Amavas)</b>: 23 &nbsp;|&nbsp; <b>New Moon (Chandra Darshan)</b>: 25
+                                </h6>
+                            </div>
+                        </div>

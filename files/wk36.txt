@@ -1,0 +1,73 @@
+
+                        <!-- <div class="row">
+                            <div class="col s3 m3 l3">
+                                <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
+                                    <h6>Monday</h6>
+                                    <h5><b>29 AUG</b></h5>
+                                </div>
+                                <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-medium-and-down hide-on-large-only">
+                                    <h6>Mo<br><b>29 Aug</b></h6>
+                                </div>
+                            </div>
+                            <div class="col s3 m3 l3">
+                                <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <h6>Tuesday</h6>
+                                    <h5><b>30 AUG</b></h5>
+                                </div>
+                                <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                    <h6>Tu<br><b>30 Aug</b></h6>
+                                </div>
+                            </div>
+                            <div class="col s3 m3 l3">
+                                <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <h6>Wednesday</h6>
+                                    <h5><b>31 AUG</b></h5>
+                                </div>
+                                <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                    <h6>We<br><b>31 Aug</b></h6>
+                                </div>
+                            </div>
+                            <div class="col s3 m3 l3">
+                                <div
+                                    class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <h6>Thursday</h6>
+                                    <h5><b>1 SEP</b></h5>
+                                </div>
+                                <div
+                                    class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                    <h6>Th<br><b>1 Sep</b></h6>
+                                </div>
+                            </div>
+                            <div class="col s4 m4 l4">
+                                <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <h6>Friday</h6>
+                                    <h5><b>2 SEP</b></h5>
+                                </div>
+                                <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                    <h6>Fr<br><b>2 Sep</b></h6>
+                                </div>
+                            </div>
+                            <div class="col s4 m4 l4">
+                                <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <h6>Saturday</h6>
+                                    <h5><b>3 SEP</b></h5>
+                                </div>
+                                <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                    <h6>Sa<br><b>3 Sep</b></h6>
+                                </div>
+                            </div>
+                            <div class="col s4 m4 l4">
+                                <div class="card-panel z-depth-4 red-text show-on-large hide-on-med-and-down">
+                                    <h6>Sunday</h6>
+                                    <h5><b>4 SEP</b></h5>
+                                </div>
+                                <div class="card-panel z-depth-4 red-text show-on-medium-and-down hide-on-large-only">
+                                    <h6>Su<br><b>4 Sep</b></h6>
+                                </div>
+                            </div>
+                            <h6><u>EVENTS IN WEEK 36</u></h6>
+                            <h6>30 AUG &#8250; Teej/ Teejri (Sindhi)</h6>
+                            <h6>31 AUG &#8250; Ganesh Chaturthi</h6>
+                            <h6>2 SEP &#8250; Chaliha End (Sindhi, Ulhasnagar-5)</h6>
+                            <h6>3 SEP &#8250; Sagra Bandhan (Sindhi)</h6>
+                        </div>
