@@ -1,0 +1,1541 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta http-equiv="refresh" content="120">
+    <title>One UI Calendar</title>
+    <link rel="stylesheet" href="OneUI/oui.min.css">
+    <link rel="stylesheet" href="materialize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/OUC.ico">
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="One UI Calendar">
+    <meta name="apple-mobile-web-app-title" content="One UI Calendar">
+    <meta name="theme-color" content="#26a69a">
+    <meta name="msapplication-navbutton-color" content="#26a69a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="index.html">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/picture3.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="images/picture3.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="images/picture4.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="48x48" href="images/picture4.png">
+    <link rel="icon" type="image/png" sizes="60x60" href="images/picture5.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="images/picture5.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="images/picture6.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="images/picture6.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="images/picture7.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="images/picture7.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="images/picture2.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="images/picture2.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/picture1.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="images/picture1.png">
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 80px;
+            z-index: 950;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 10px;
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #818181;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 5px;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        @font-face {
+            font-family: 'SamsungOne 400';
+            src: local('SamsungOne 400'), url('SamsungOne-400.woff') format('woff');
+        }
+
+        * {
+            font-family: 'SamsungOne 400';
+        }
+
+        .oui-button {
+            font-family: 'SamsungOne 400';
+            font-size: medium;
+            z-index: 900;
+        }
+
+        .card-panel {
+            border-radius: 15px;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="materialize.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.fixed-action-btn').openFAB();
+            $('.fixed-action-btn').closeFAB();
+            $('.fixed-action-btn.toolbar').openToolbar();
+            $('.fixed-action-btn.toolbar').closeToolbar();
+            $('.tooltipped').tooltip({
+                delay: 50
+            });
+        })
+        $(document).ready(function () {
+            $('.modal').modal();
+            $('#modal').modal();
+        })
+        $(document).bind("contextmenu", function (e) {
+            return false;
+        });
+    </script>
+</head>
+
+<body onload="location.href='index.html#view'">
+    <main class="containr">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class="collection left-align container" style="border-width: 0px;">
+                <li class="collection-item avatar grey lighten-3 oui-bubble z-depth-1" style="cursor: pointer;"
+                    onclick="location.href='about.html'">
+                    <a href="#!"><i class="fas fa-info circle teal lighten-1"></i></a>
+                    <span style="font-size: x-large;">About</span><br>
+                    <span>About this Website</span>
+                </li>
+                <li class="collection-item transparent"></li>
+            </ul>
+        </div>
+        <div id="main">
+            <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "100%";
+                }
+
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                }
+            </script>
+            <div class="oui-viewing center-align">
+                <h4>One UI Calendar</h4>
+                <h5 class="grey-text text-darken-1">Year View</h5>
+                <h6 class="black-text">Click on a Month to View it..</h6>
+            </div>
+            <div id="view"></div><br>
+            <div class="row">
+                <div class="col s1 m1 l1 left-align" style="font-size: x-large;">
+                    <a href="javascript:openNav()" class="tooltipped black-text" data-position="right" data-delay="50"
+                        data-tooltip="Menu">&#9776;</a></div>
+                <div class="col s11 m11 l11"></div>
+            </div>
+            <div class="oui-interaction center-align">
+                <!-- Interaction area -->
+                <div class="oui-bubble">
+                    <div class="col s12">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab">
+                                <a href="ys12.html" target="_self" class="black-text">
+                                    <h6><i class="fas fa-chevron-left"></i></h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2021" class="black-text">
+                                    <h6>2021</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2022" class="active black-text">
+                                    <h6>2022</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2023" class="black-text">
+                                    <h6>2023</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2024" class="black-text">
+                                    <h6>2024</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2025" class="black-text">
+                                    <h6>2025</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2026" class="black-text">
+                                    <h6>2026</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2027" class="black-text">
+                                    <h6>2027</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2028" class="black-text">
+                                    <h6>2028</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2029" class="black-text">
+                                    <h6>2029</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#2030" class="black-text">
+                                    <h6>2030</h6>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="ys14.html" target="_self" class="black-text">
+                                    <h6><i class="fas fa-chevron-right"></i></h6>
+                                </a>
+                            </li>
+                            <div class="indicator teal lighten-1"></div>
+                        </ul>
+                    </div>
+                    <div class="col s12" id="2021"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2022"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#Jul22"
+                                class="col s3 m3 oui-button teal lighten-1 white-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col l3"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"
+                                    style="font-size: small;"><b>YEAR SERIES</b></a>
+                                <a href="#wee"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"
+                                    style="font-size: small;"><b>WEEK VIEW</b></a>
+                                <a href="#tod"
+                                    class="col s3 m3 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"
+                                    style="font-size: small;"><b>DAY VIEW</b></a>
+                                <div class="col l3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2023"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2024"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2025"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2026"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2027"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2028"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2029"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12" id="2030"><br>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>FEB</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAR</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>APR</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#C"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>MAY</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#F"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUN</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#A"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JUL</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#D"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>AUG</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>SEP</b></a>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <a href="#B"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>OCT</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#E"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>NOV</b></a>
+                            <div class="col s1 m1"></div>
+                            <a href="#G"
+                                class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
+                        </div>
+                        <div class="row">
+                            <h5><b><u>QUICK LINKS</u></b></h5>
+                            <div class="row">
+                                <div class="col s4 m4 l5"></div>
+                                <a href="#ser"
+                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>YEAR
+                                        SERIES</b></a>
+                                <div class="col s4 m4 l5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--a-->
+                    <div class="modal" id="A">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td>1</td>
+                                    <td>8</td>
+                                    <td>15</td>
+                                    <td>22</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                    <td>16</td>
+                                    <td>23</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td>3</td>
+                                    <td>10</td>
+                                    <td>17</td>
+                                    <td>24</td>
+                                    <td>31</td>
+                                </tr>
+                                <tr>
+                                    <td><b>THU</b></td>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>18</td>
+                                    <td>25</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>19</td>
+                                    <td>26</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td>6</td>
+                                    <td>13</td>
+                                    <td>20</td>
+                                    <td>27</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">7</td>
+                                    <td class="red-text">14</td>
+                                    <td class="red-text">21</td>
+                                    <td class="red-text">28</td>
+                                    <td class="red-text"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--b-->
+                    <div class="modal" id="B">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td>14</td>
+                                    <td>21</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td>1</td>
+                                    <td>8</td>
+                                    <td>15</td>
+                                    <td>22</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                    <td>16</td>
+                                    <td>23</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td><b>THU</b></td>
+                                    <td>3</td>
+                                    <td>10</td>
+                                    <td>17</td>
+                                    <td>24</td>
+                                    <td>31</td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>18</td>
+                                    <td>25</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>19</td>
+                                    <td>26</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">6</td>
+                                    <td class="red-text">13</td>
+                                    <td class="red-text">20</td>
+                                    <td class="red-text">27</td>
+                                    <td class="red-text"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--c-->
+                    <div class="modal" id="C">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td></td>
+                                    <td>6</td>
+                                    <td>13</td>
+                                    <td>20</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td>14</td>
+                                    <td>21</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td>1</td>
+                                    <td>8</td>
+                                    <td>15</td>
+                                    <td>22</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td><b>THU</b></td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                    <td>16</td>
+                                    <td>23</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td>3</td>
+                                    <td>10</td>
+                                    <td>17</td>
+                                    <td>24</td>
+                                    <td>31</td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>18</td>
+                                    <td>25</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">5</td>
+                                    <td class="red-text">12</td>
+                                    <td class="red-text">19</td>
+                                    <td class="red-text">26</td>
+                                    <td class="red-text"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--d-->
+                    <div class="modal" id="D">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td></td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>19</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td></td>
+                                    <td>6</td>
+                                    <td>13</td>
+                                    <td>20</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td>14</td>
+                                    <td>21</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td><b>THU</b></td>
+                                    <td>1</td>
+                                    <td>8</td>
+                                    <td>15</td>
+                                    <td>22</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                    <td>16</td>
+                                    <td>23</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td>3</td>
+                                    <td>10</td>
+                                    <td>17</td>
+                                    <td>24</td>
+                                    <td>31</td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">4</td>
+                                    <td class="red-text">11</td>
+                                    <td class="red-text">18</td>
+                                    <td class="red-text">25</td>
+                                    <td class="red-text"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--e-->
+                    <div class="modal" id="E">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td></td>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>18</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td></td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>19</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td></td>
+                                    <td>6</td>
+                                    <td>13</td>
+                                    <td>20</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td><b>THU</b></td>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td>14</td>
+                                    <td>21</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td>1</td>
+                                    <td>8</td>
+                                    <td>15</td>
+                                    <td>22</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                    <td>16</td>
+                                    <td>23</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">3</td>
+                                    <td class="red-text">10</td>
+                                    <td class="red-text">17</td>
+                                    <td class="red-text">24</td>
+                                    <td class="red-text">31</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--f-->
+                    <div class="modal" id="F">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td>31</td>
+                                    <td>3</td>
+                                    <td>10</td>
+                                    <td>17</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td></td>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>18</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td></td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>19</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td><b>THU</b></td>
+                                    <td></td>
+                                    <td>6</td>
+                                    <td>13</td>
+                                    <td>20</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td>14</td>
+                                    <td>21</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td>1</td>
+                                    <td>8</td>
+                                    <td>15</td>
+                                    <td>22</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">2</td>
+                                    <td class="red-text">9</td>
+                                    <td class="red-text">16</td>
+                                    <td class="red-text">23</td>
+                                    <td class="red-text">30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--g-->
+                    <div class="modal" id="G">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td>30</td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                    <td>16</td>
+                                    <td>23</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td>31</td>
+                                    <td>3</td>
+                                    <td>10</td>
+                                    <td>17</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td></td>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>18</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td><b>THU</b></td>
+                                    <td></td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>19</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td></td>
+                                    <td>6</td>
+                                    <td>13</td>
+                                    <td>20</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td>14</td>
+                                    <td>21</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">1</td>
+                                    <td class="red-text">8</td>
+                                    <td class="red-text">15</td>
+                                    <td class="red-text">22</td>
+                                    <td class="red-text">29</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--Year Series-->
+                    <div class="modal" id="ser">
+                        <div class="modal-content center">
+                            <p>*Click on any of 10-Year Series to view</p>
+                            <div class="row">
+                                <a href="ys1.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1901-1910</a>
+                                <a href="ys2.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1911-1920</a>
+                                <a href="ys3.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1921-1930</a>
+                                <a href="ys4.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1931-1940</a>
+                                <a href="ys1.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1901-10</a>
+                                <a href="ys2.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1911-20</a>
+                                <a href="ys3.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1921-30</a>
+                                <a href="ys4.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1931-40</a>
+                            </div>
+                            <div class="row">
+                                <a href="ys5.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1941-1950</a>
+                                <a href="ys6.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1951-1960</a>
+                                <a href="ys7.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1961-1970</a>
+                                <a href="ys8.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1971-1980</a>
+                                <a href="ys5.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1941-50</a>
+                                <a href="ys6.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1951-60</a>
+                                <a href="ys7.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1961-70</a>
+                                <a href="ys8.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1971-80</a>
+                            </div>
+                            <div class="row">
+                                <a href="ys9.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1981-1990</a>
+                                <a href="ys10.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1991-2000</a>
+                                <a href="ys11.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2001-2010</a>
+                                <a href="ys12.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2011-2020</a>
+                                <a href="ys9.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1981-90</a>
+                                <a href="ys10.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">1991-00</a>
+                                <a href="ys11.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2001-10</a>
+                                <a href="ys12.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2011-20</a>
+                            </div>
+                            <div class="row">
+                                <a href="index.html"
+                                    class="col s3 m3 l3 oui-button teal lighten-1 white-text show-on-large hide-on-med-and-down">2021-2030</a>
+                                <a href="ys14.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2031-2040</a>
+                                <a href="ys15.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2041-2050</a>
+                                <a href="ys16.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2051-2060</a>
+                                <a href="index.html"
+                                    class="col s3 m3 l3 oui-button teal lighten-1 white-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2021-30</a>
+                                <a href="ys14.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2031-40</a>
+                                <a href="ys15.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2041-50</a>
+                                <a href="ys16.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2051-60</a>
+                            </div>
+                            <div class="row">
+                                <a href="ys17.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2061-2070</a>
+                                <a href="ys18.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2071-2080</a>
+                                <a href="ys19.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2081-2090</a>
+                                <a href="ys20.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2091-2100</a>
+                                <a href="ys17.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2061-70</a>
+                                <a href="ys18.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2071-80</a>
+                                <a href="ys19.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2081-90</a>
+                                <a href="ys20.html"
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    style="font-size: x-small;">2091-00</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Week View-->
+                    <div class="modal" id="wee">
+                        <div class="modal-content center">
+                            <div class="row">
+                                <div class="col s3 m3 l3">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Monday</h6>
+                                        <h5><b>11 JUL</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Mo<br><b>11 Jul</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s3 m3 l3">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Tuesday</h6>
+                                        <h5><b>12 JUL</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Tu<br><b>12 Jul</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s3 m3 l3">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Wednesday</h6>
+                                        <h5><b>13 JUL</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>We<br><b>13 Jul</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s3 m3 l3">
+                                    <div
+                                        class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
+                                        <h6>Thursday</h6>
+                                        <h5><b>14 JUL</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 teal lighten-1 white-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Th<br><b>14 Jul</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s4 m4 l4">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Friday</h6>
+                                        <h5><b>15 JUL</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Fr<br><b>15 Jul</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s4 m4 l4">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Saturday</h6>
+                                        <h5><b>16 JUL</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Sa<br><b>16 Jul</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s4 m4 l4">
+                                    <div class="card-panel z-depth-4 red-text show-on-large hide-on-med-and-down">
+                                        <h6>Sunday</h6>
+                                        <h5><b>17 JUL</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 red-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Su<br><b>17 Jul</b></h6>
+                                    </div>
+                                </div>
+                                <h6><u>EVENTS IN WEEK 29</u></h6>
+                                <h6>13 JUL &#8250; Guru Purnima</h6>
+                                <h6>16 JUL &#8250; Chaliha Start (Sindhi, Ulhasnagar-2)</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Today View-->
+                    <div class="modal" id="tod">
+                        <div class="modal-content center">
+                            <div class="row">
+                                <div class="col s12 m12 l12">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6> Thursday </h6>
+                                        <h5><b> 14 JUL </b></h5>
+                                        <h5><i class="far fa-sun"></i> 06:08 </h5>
+                                        <h5><i class="fas fa-sun"></i> 19:19 </h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6> Thu </h6>
+                                        <h5><b> 14 JUL </b></h5>
+                                        <h6><i class="far fa-sun"></i> 06:08 </h6>
+                                        <h6><i class="fas fa-sun"></i> 19:19 </h6>
+                                    </div>
+                                </div>
+                                <h6><u>EVENTS TODAY</u></h6>
+                                <h6> No Events </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Jul22-->
+                    <div class="modal" id="Jul22">
+                        <div class="modal-content center">
+                            <table class="centered">
+                                <tr>
+                                    <td><b>MON</b></td>
+                                    <td></td>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>18</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TUE</b></td>
+                                    <td></td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>19</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td><b>WED</b></td>
+                                    <td></td>
+                                    <td>6</td>
+                                    <td>13</td>
+                                    <td>20</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td><b><u>THU</u></b></td>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td><span class="teal lighten-1 white-text"
+                                            style="border-radius: 5px;">&nbsp;14&nbsp;</span></td>
+                                    <td>21</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td><b>FRI</b></td>
+                                    <td>1</td>
+                                    <td>8</td>
+                                    <td>15</td>
+                                    <td>22</td>
+                                    <td>29</td>
+                                </tr>
+                                <tr>
+                                    <td><b>SAT</b></td>
+                                    <td>2</td>
+                                    <td>9</td>
+                                    <td>16</td>
+                                    <td>23</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td class="red-text"><b>SUN</b></td>
+                                    <td class="red-text">3</td>
+                                    <td class="red-text">10</td>
+                                    <td class="red-text">17</td>
+                                    <td class="red-text">24</td>
+                                    <td class="red-text">31</td>
+                                </tr>
+                            </table>
+                            <h6><u>IN THIS MONTH</u></h6>
+                            <h6><b>Ekadashi</b>: 10, 24 &nbsp;|&nbsp; <b>Full Moon (Poornima)</b>: 13
+                                &nbsp;|&nbsp;
+                                <b>Ganesh Sankashti Chaturthi</b>: 16 &nbsp;|&nbsp; <b>Sankranti</b>: 17
+                                &nbsp;|&nbsp;
+                                <b>No Moon (Amavas)</b>: 28 &nbsp;|&nbsp; <b>New Moon (Chandra Darshan)</b>: 30
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+    </main>
+    <script>
+        if ('serviceWorker' in navigator) {
+            // Register service worker
+            navigator.serviceWorker.register('sw.js', {
+                scope: '.'
+            });
+        };
+    </script>
+</body>
+
+</html>
