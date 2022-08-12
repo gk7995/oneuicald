@@ -98,6 +98,12 @@
         .card-panel {
             border-radius: 15px;
         }
+
+        #curr {
+            text-decoration: underline dotted;
+            text-underline-position: under;
+            text-decoration-thickness: 1.5px;
+        }
     </style>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="materialize.js"></script>
@@ -152,10 +158,14 @@
             </div>
             <div id="view"></div><br>
             <div class="row">
-                <div class="col s1 m1 l1 left-align" style="font-size: x-large;">
+                <div class="col s1 m1 l1 left-align show-on-small hide-on-med-and-up" style="font-size: x-large;">
                     <a href="javascript:openNav()" class="tooltipped black-text" data-position="right" data-delay="50"
                         data-tooltip="Menu">&#9776;</a></div>
                 <div class="col s11 m11 l11"></div>
+                <div class="show-on-medium-and-up hide-on-small-only center" style="font-size: large;">
+                    <a href="#!" class="col m6 l6 teal-text text-lighten-1"><span id="curr">Home</span></a>
+                    <a href="about.html" class="col m6 l6 black-text">About</a>
+                </div>
             </div>
             <div class="oui-interaction center-align">
                 <!-- Interaction area -->
@@ -1238,112 +1248,112 @@
                             <p>*Click on any of 10-Year Series to view</p>
                             <div class="row">
                                 <a href="ys1.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1901-1910</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1901-1910</a>
                                 <a href="ys2.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1911-1920</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1911-1920</a>
                                 <a href="ys3.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1921-1930</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1921-1930</a>
                                 <a href="ys4.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1931-1940</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1931-1940</a>
                                 <a href="ys1.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1901-10</a>
                                 <a href="ys2.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1911-20</a>
                                 <a href="ys3.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1921-30</a>
                                 <a href="ys4.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1931-40</a>
                             </div>
                             <div class="row">
                                 <a href="ys5.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1941-1950</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1941-1950</a>
                                 <a href="ys6.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1951-1960</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1951-1960</a>
                                 <a href="ys7.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1961-1970</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1961-1970</a>
                                 <a href="ys8.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1971-1980</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1971-1980</a>
                                 <a href="ys5.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1941-50</a>
                                 <a href="ys6.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1951-60</a>
                                 <a href="ys7.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1961-70</a>
                                 <a href="ys8.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1971-80</a>
                             </div>
                             <div class="row">
                                 <a href="ys9.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1981-1990</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1981-1990</a>
                                 <a href="ys10.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">1991-2000</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">1991-2000</a>
                                 <a href="ys11.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2001-2010</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2001-2010</a>
                                 <a href="ys12.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2011-2020</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2011-2020</a>
                                 <a href="ys9.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1981-90</a>
                                 <a href="ys10.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">1991-00</a>
                                 <a href="ys11.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2001-10</a>
                                 <a href="ys12.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2011-20</a>
                             </div>
                             <div class="row">
                                 <a href="index.html"
-                                    class="col s3 m3 l3 oui-button teal lighten-1 white-text show-on-large hide-on-med-and-down">2021-2030</a>
+                                    class="col s3 m3 l3 oui-button teal lighten-1 white-text show-on-medium-and-up hide-on-small-only">2021-2030</a>
                                 <a href="ys14.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2031-2040</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2031-2040</a>
                                 <a href="ys15.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2041-2050</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2041-2050</a>
                                 <a href="ys16.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2051-2060</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2051-2060</a>
                                 <a href="index.html"
-                                    class="col s3 m3 l3 oui-button teal lighten-1 white-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button teal lighten-1 white-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2021-30</a>
                                 <a href="ys14.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2031-40</a>
                                 <a href="ys15.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2041-50</a>
                                 <a href="ys16.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2051-60</a>
                             </div>
                             <div class="row">
                                 <a href="ys17.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2061-2070</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2061-2070</a>
                                 <a href="ys18.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2071-2080</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2071-2080</a>
                                 <a href="ys19.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2081-2090</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2081-2090</a>
                                 <a href="ys20.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-large hide-on-med-and-down">2091-2100</a>
+                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-up hide-on-small-only">2091-2100</a>
                                 <a href="ys17.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2061-70</a>
                                 <a href="ys18.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2071-80</a>
                                 <a href="ys19.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2081-90</a>
                                 <a href="ys20.html"
-                                    class="col s3 m3 l3 oui-button black-text show-on-medium-and-down hide-on-large-only"
+                                    class="col s3 m3 l3 oui-button black-text show-on-small hide-on-med-and-up"
                                     style="font-size: x-small;">2091-00</a>
                             </div>
                         </div>
@@ -1363,8 +1373,7 @@
                                     </div>
                                 </div>
                                 <div class="col s3 m3 l3">
-                                    <div
-                                        class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
                                         <h6>Tuesday</h6>
                                         <h5><b>9 AUG</b></h5>
                                     </div>
@@ -1394,7 +1403,8 @@
                                     </div>
                                 </div>
                                 <div class="col s4 m4 l4">
-                                    <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
+                                    <div
+                                        class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                         <h6>Friday</h6>
                                         <h5><b>12 AUG</b></h5>
                                     </div>
