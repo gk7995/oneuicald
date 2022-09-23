@@ -7,10 +7,11 @@
     <title>One UI Calendar</title>
     <link rel="stylesheet" href="OneUI/oui.min.css">
     <link rel="stylesheet" href="materialize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/regular.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" href="images/OUC.ico">
@@ -124,6 +125,39 @@
         $(document).bind("contextmenu", function (e) {
             return false;
         });
+
+        function refreshTime() {
+            const timeDisplay = document.getElementById("day");
+            var options = {
+                weekday: 'long'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay.textContent = formattedString;
+        }
+        setInterval(refreshTime, 1000);
+
+        function refreshTime1() {
+            const timeDisplay1 = document.getElementById("month");
+            var options = {
+                month: 'short'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay1.textContent = formattedString;
+        }
+        setInterval(refreshTime1, 1000);
+
+        function refreshTime2() {
+            const timeDisplay2 = document.getElementById("date");
+            var options = {
+                day: 'numeric'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay2.textContent = formattedString;
+        }
+        setInterval(refreshTime2, 1000);
     </script>
 </head>
 
@@ -134,7 +168,7 @@
             <ul class="collection left-align container" style="border-width: 0px;">
                 <li class="collection-item avatar grey lighten-3 oui-bubble z-depth-1" style="cursor: pointer;"
                     onclick="location.href='about.html'">
-                    <a href="#!"><i class="fas fa-info circle teal lighten-1"></i></a>
+                    <a href="#!"><i class="fa-solid fa-info circle teal lighten-1"></i></a>
                     <span style="font-size: x-large;">About</span><br>
                     <span>About this Website</span>
                 </li>
@@ -174,7 +208,7 @@
                         <ul class="tabs tabs-fixed-width">
                             <li class="tab">
                                 <a href="ys12.html" target="_self" class="black-text">
-                                    <h6><i class="fas fa-chevron-left"></i></h6>
+                                    <h6><i class="fa-solid fa-chevron-left"></i></h6>
                                 </a>
                             </li>
                             <li class="tab">
@@ -229,7 +263,7 @@
                             </li>
                             <li class="tab">
                                 <a href="ys14.html" target="_self" class="black-text">
-                                    <h6><i class="fas fa-chevron-right"></i></h6>
+                                    <h6><i class="fa-solid fa-chevron-right"></i></h6>
                                 </a>
                             </li>
                             <div class="indicator teal lighten-1"></div>
@@ -1370,8 +1404,7 @@
                         <div class="modal-content center">
                             <div class="row">
                                 <div class="col s3 m3 l3">
-                                    <div
-                                        class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
                                         <h6>Monday</h6>
                                         <h5><b>19 SEP</b></h5>
                                     </div>
@@ -1411,7 +1444,8 @@
                                     </div>
                                 </div>
                                 <div class="col s4 m4 l4">
-                                    <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
+                                    <div
+                                        class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                         <h6>Friday</h6>
                                         <h5><b>23 SEP</b></h5>
                                     </div>
@@ -1452,17 +1486,18 @@
                             <div class="row">
                                 <div class="col s12 m12 l12">
                                     <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
-                                        <h6> Friday </h6>
-                                        <h5><b> 23 SEP </b></h5>
-                                        <h5><i class="far fa-sun"></i> 06:26 </h5>
-                                        <h5><i class="fas fa-sun"></i> 18:33 </h5>
+                                        <h6><span id="day"></span></h6>
+                                        <h5><b><span id="date"></span> <span id="month"
+                                                    style="text-transform: uppercase;"></span></b></h5>
+                                        <h5><i class="fa-regular fa-sun"></i> 06:26 </h5>
+                                        <h5><i class="fa-solid fa-sun"></i> 18:33 </h5>
                                     </div>
                                     <div
                                         class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
                                         <h6> Fri </h6>
                                         <h5><b> 23 SEP </b></h5>
-                                        <h6><i class="far fa-sun"></i> 06:26 </h6>
-                                        <h6><i class="fas fa-sun"></i> 18:33 </h6>
+                                        <h6><i class="fa-regular fa-sun"></i> 06:26 </h6>
+                                        <h6><i class="fa-solid fa-sun"></i> 18:33 </h6>
                                     </div>
                                 </div>
                                 <h6><u>EVENTS TODAY</u></h6>
