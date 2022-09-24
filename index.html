@@ -191,6 +191,34 @@
             timeDisplay5.textContent = formattedString;
         }
         setInterval(refreshTime5, 1000);
+
+        function refreshTime6() {
+            const timeDisplay6 = document.getElementById("time");
+            var options = {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: false
+            }
+            const dateString = new Date().toLocaleTimeString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay6.textContent = formattedString;
+        }
+        setInterval(refreshTime6, 1000);
+
+        function refreshTime7() {
+            const timeDisplay7 = document.getElementById("time1");
+            var options = {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: false
+            }
+            const dateString = new Date().toLocaleTimeString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay7.textContent = formattedString;
+        }
+        setInterval(refreshTime7, 1000);
     </script>
 </head>
 
@@ -1522,20 +1550,52 @@
                                         <h6><span id="day"></span></h6>
                                         <h5><b><span id="date"></span> <span id="month"
                                                     style="text-transform: uppercase;"></span></b></h5>
-                                        <h5><i class="fa-regular fa-sun"></i> 06:26 </h5>
-                                        <h5><i class="fa-solid fa-sun"></i> 18:33 </h5>
+                                        <table class="centered">
+                                            <tr>
+                                                <td>
+                                                    <h5 class="tooltipped" data-position="bottom" data-delay="50"
+                                                        data-tooltip="Sunrise*">
+                                                        <i class="fa-regular fa-sun"></i> 06:27 </h5>
+                                                </td>
+                                                <td>
+                                                    <h5 class="tooltipped" data-position="bottom" data-delay="50"
+                                                        data-tooltip="Sunset*">
+                                                        <i class="fa-solid fa-sun"></i> 18:33 </h5>
+                                                </td>
+                                                <td>
+                                                    <h5 class="tooltipped" data-position="bottom" data-delay="50"
+                                                        data-tooltip="Current Time">
+                                                        <i class="fa-solid fa-clock"></i> <span id="time"></span></h5>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                     <div
                                         class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
                                         <h6><span id="day1"></span></h6>
                                         <h5><b><span id="date1"></span> <span id="month1"
                                                     style="text-transform: uppercase;"></span></b></h5>
-                                        <h6><i class="fa-regular fa-sun"></i> 06:26 </h6>
-                                        <h6><i class="fa-solid fa-sun"></i> 18:33 </h6>
+                                        <table class="centered">
+                                            <tr>
+                                                <td>
+                                                    <h6 class="tooltipped" data-position="bottom" data-delay="50"
+                                                        data-tooltip="Sunrise*">
+                                                        <i class="fa-regular fa-sun"></i> 06:27 </h6>
+                                                </td>
+                                                <td>
+                                                    <h6 class="tooltipped" data-position="bottom" data-delay="50"
+                                                        data-tooltip="Sunset*">
+                                                        <i class="fa-solid fa-sun"></i> 18:33 </h6>
+                                                </td>
+                                                <td>
+                                                    <h6 class="tooltipped" data-position="bottom" data-delay="50"
+                                                        data-tooltip="Current Time">
+                                                        <i class="fa-solid fa-clock"></i> <span id="time1"></span></h6>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
-                                <h6><u>EVENTS TODAY</u></h6>
-                                <h6> Shiradh End </h6>
                             </div>
                         </div>
                     </div>
