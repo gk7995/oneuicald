@@ -158,6 +158,39 @@
             timeDisplay2.textContent = formattedString;
         }
         setInterval(refreshTime2, 1000);
+
+        function refreshTime3() {
+            const timeDisplay3 = document.getElementById("day1");
+            var options = {
+                weekday: 'long'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay3.textContent = formattedString;
+        }
+        setInterval(refreshTime3, 1000);
+
+        function refreshTime4() {
+            const timeDisplay4 = document.getElementById("month1");
+            var options = {
+                month: 'short'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay4.textContent = formattedString;
+        }
+        setInterval(refreshTime4, 1000);
+
+        function refreshTime5() {
+            const timeDisplay5 = document.getElementById("date1");
+            var options = {
+                day: 'numeric'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay5.textContent = formattedString;
+        }
+        setInterval(refreshTime5, 1000);
     </script>
 </head>
 
@@ -1444,8 +1477,7 @@
                                     </div>
                                 </div>
                                 <div class="col s4 m4 l4">
-                                    <div
-                                        class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
                                         <h6>Friday</h6>
                                         <h5><b>23 SEP</b></h5>
                                     </div>
@@ -1455,7 +1487,8 @@
                                     </div>
                                 </div>
                                 <div class="col s4 m4 l4">
-                                    <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
+                                    <div
+                                        class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                         <h6>Saturday</h6>
                                         <h5><b>24 SEP</b></h5>
                                     </div>
@@ -1494,9 +1527,9 @@
                                     </div>
                                     <div
                                         class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
-                                        <h6><span id="day"></span></h6>
-                                        <h5><span id="date"></span> <span id="month"
-                                                    style="text-transform: uppercase;"></span></h5>
+                                        <h6><span id="day1"></span></h6>
+                                        <h5><b><span id="date1"></span> <span id="month1"
+                                                    style="text-transform: uppercase;"></span></b></h5>
                                         <h6><i class="fa-regular fa-sun"></i> 06:26 </h6>
                                         <h6><i class="fa-solid fa-sun"></i> 18:33 </h6>
                                     </div>
