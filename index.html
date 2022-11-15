@@ -40,47 +40,6 @@
     <link rel="icon" type="image/png" sizes="512x512" href="images/picture1.png">
     <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="images/picture1.png">
     <style>
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #f5f5f5;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 80px;
-            z-index: 950;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 10px;
-            text-decoration: none;
-            font-size: 25px;
-            color: black;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #818181;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 5px;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 10px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
-
         @font-face {
             font-family: 'SamsungOne 400';
             src: local('SamsungOne 400'), url('SamsungOne-400.woff') format('woff');
@@ -224,28 +183,7 @@
 
 <body onload="location.href='index.html#view'">
     <main class="containr">
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class="collection left-align container" style="border-width: 0px;">
-                <li class="collection-item avatar grey lighten-3 oui-bubble z-depth-1" style="cursor: pointer;"
-                    onclick="location.href='about.html'">
-                    <a href="#!"><i class="fa-solid fa-info circle teal lighten-1"></i></a>
-                    <span style="font-size: x-large;">About</span><br>
-                    <span>About this Website</span>
-                </li>
-                <li class="collection-item transparent"></li>
-            </ul>
-        </div>
         <div id="main">
-            <script>
-                function openNav() {
-                    document.getElementById("mySidenav").style.width = "100%";
-                }
-
-                function closeNav() {
-                    document.getElementById("mySidenav").style.width = "0";
-                }
-            </script>
             <div class="oui-viewing center-align">
                 <h4>One UI Calendar</h4>
                 <h5 class="grey-text text-darken-1">Year View</h5>
@@ -253,13 +191,9 @@
             </div>
             <div id="view"></div><br>
             <div class="row">
-                <div class="col s1 m1 l1 left-align show-on-small hide-on-med-and-up" style="font-size: x-large;">
-                    <a href="javascript:openNav()" class="tooltipped black-text" data-position="right" data-delay="50"
-                        data-tooltip="Menu">&#9776;</a></div>
-                <div class="col s11 m11 l11"></div>
-                <div class="show-on-medium-and-up hide-on-small-only center" style="font-size: large;">
-                    <a href="#!" class="col m6 l6 teal-text text-lighten-1"><span id="curr">Home</span></a>
-                    <a href="about.html" class="col m6 l6 black-text">About</a>
+                <div class="center" style="font-size: large;">
+                    <a href="#!" class="col s6 m6 l6 teal-text text-lighten-1"><span id="curr">Home</span></a>
+                    <a href="about.html" class="col s6 m6 l6 black-text">About</a>
                 </div>
             </div>
             <div class="oui-interaction center-align">
@@ -446,13 +380,6 @@
                                     style="font-size: small;"><b>DAY VIEW</b></a>
                                 <div class="col l3"></div>
                             </div>
-                            <!-- <div class="row">
-                                <div class="col s4 m4 l5"></div>
-                                <a href="#eve"
-                                    class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"
-                                    style="font-size: small;"><b>EVENTS 2022</b></a>
-                                <div class="col s4 m4 l5"></div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="col s12" id="2023"><br>
@@ -1464,75 +1391,81 @@
                     <div class="modal" id="wee">
                         <div class="modal-content center">
                             <div class="row">
-                        <div class="col s6 m4 l4">
-                            <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
-                                <h6>Monday</h6>
-                                <h5><b>14 NOV</b></h5>
+                                <div class="col s6 m4 l4">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Monday</h6>
+                                        <h5><b>14 NOV</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Monday<br><b>14 NOV</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <div
+                                        class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
+                                        <h6>Tuesday</h6>
+                                        <h5><b>15 NOV</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 teal lighten-1 white-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Tuesday<br><b>15 NOV</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Wednesday</h6>
+                                        <h5><b>16 NOV</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Wednesday<br><b>16 NOV</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Thursday</h6>
+                                        <h5><b>17 NOV</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Thursday<br><b>17 NOV</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Friday</h6>
+                                        <h5><b>18 NOV</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Friday<br><b>18 NOV</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
+                                        <h6>Saturday</h6>
+                                        <h5><b>19 NOV</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Saturday<br><b>19 NOV</b></h6>
+                                    </div>
+                                </div>
+                                <div class="col s6 m4 l4">
+                                    <div class="card-panel z-depth-4 red-text show-on-large hide-on-med-and-down">
+                                        <h6>Sunday</h6>
+                                        <h5><b>20 NOV</b></h5>
+                                    </div>
+                                    <div
+                                        class="card-panel z-depth-4 red-text show-on-medium-and-down hide-on-large-only">
+                                        <h6>Sunday<br><b>20 NOV</b></h6>
+                                    </div>
+                                </div>
+                                <h6><u>EVENTS IN WEEK 47</u></h6>
+                                <h6>14 NOV &#8250; Childrens Day (Nehru Birthday)</h6>
                             </div>
-                            <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
-                                <h6>Monday<br><b>14 NOV</b></h6>
-                            </div>
-                        </div>
-                        <div class="col s6 m4 l4">
-                            <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
-                                <h6>Tuesday</h6>
-                                <h5><b>15 NOV</b></h5>
-                            </div>
-                            <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-medium-and-down hide-on-large-only">
-                                <h6>Tuesday<br><b>15 NOV</b></h6>
-                            </div>
-                        </div>
-                        <div class="col s6 m4 l4">
-                            <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
-                                <h6>Wednesday</h6>
-                                <h5><b>16 NOV</b></h5>
-                            </div>
-                            <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
-                                <h6>Wednesday<br><b>16 NOV</b></h6>
-                            </div>
-                        </div>
-                        <div class="col s6 m4 l4">
-                            <div
-                                class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
-                                <h6>Thursday</h6>
-                                <h5><b>17 NOV</b></h5>
-                            </div>
-                            <div
-                                class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
-                                <h6>Thursday<br><b>17 NOV</b></h6>
-                            </div>
-                        </div>
-                        <div class="col s6 m4 l4">
-                            <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
-                                <h6>Friday</h6>
-                                <h5><b>18 NOV</b></h5>
-                            </div>
-                            <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
-                                <h6>Friday<br><b>18 NOV</b></h6>
-                            </div>
-                        </div>
-                        <div class="col s6 m4 l4">
-                            <div class="card-panel z-depth-4 black-text show-on-large hide-on-med-and-down">
-                                <h6>Saturday</h6>
-                                <h5><b>19 NOV</b></h5>
-                            </div>
-                            <div class="card-panel z-depth-4 black-text show-on-medium-and-down hide-on-large-only">
-                                <h6>Saturday<br><b>19 NOV</b></h6>
-                            </div>
-                        </div>
-                        <div class="col s6 m4 l4">
-                            <div class="card-panel z-depth-4 red-text show-on-large hide-on-med-and-down">
-                                <h6>Sunday</h6>
-                                <h5><b>20 NOV</b></h5>
-                            </div>
-                            <div class="card-panel z-depth-4 red-text show-on-medium-and-down hide-on-large-only">
-                                <h6>Sunday<br><b>20 NOV</b></h6>
-                            </div>
-                        </div>
-                        <h6><u>EVENTS IN WEEK 47</u></h6>
-                        <h6>14 NOV &#8250; Childrens Day (Nehru Birthday)</h6>
-                    </div>
-                    <!-- <div class="row">
+                            <!-- <div class="row">
                         <div class="col s6 m4 l4">
                             <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                 <h6>Monday</h6>
@@ -1601,7 +1534,7 @@
                         <h6><u>EVENTS IN WEEK 48</u></h6>
                         <h6>24 NOV &#8250; Thanks Giving Day</h6>
                     </div> -->
-                    <!-- <div class="row">
+                            <!-- <div class="row">
                         <div class="col s6 m4 l4">
                             <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                 <h6>Monday</h6>
@@ -1670,7 +1603,7 @@
                         <h6><u>EVENTS IN WEEK 49</u></h6>
                         <h6>3 DEC &#8250; Geeta Jayanti</h6>
                     </div> -->
-                    <!-- <div class="row">
+                            <!-- <div class="row">
                         <div class="col s6 m4 l4">
                             <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                 <h6>Monday</h6>
@@ -1739,7 +1672,7 @@
                         <h6><u>EVENTS IN WEEK 50</u></h6>
                         <h6>7 DEC &#8250; Datt Jayanti</h6>
                     </div> -->
-                    <!-- <div class="row">
+                            <!-- <div class="row">
                         <div class="col s6 m4 l4">
                             <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                 <h6>Monday</h6>
@@ -1808,7 +1741,7 @@
                         <h6><u>EVENTS IN WEEK 51</u></h6>
                         <h6>No Events</h6>
                     </div> -->
-                    <!-- <div class="row">
+                            <!-- <div class="row">
                         <div class="col s6 m4 l4">
                             <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                 <h6>Monday</h6>
@@ -1877,7 +1810,7 @@
                         <h6><u>EVENTS IN WEEK 52</u></h6>
                         <h6>25 DEC &#8250; Christmas</h6>
                     </div> -->
-                    <!-- <div class="row">
+                            <!-- <div class="row">
                         <div class="col s6 m4 l4">
                             <div class="card-panel z-depth-4 teal lighten-1 white-text show-on-large hide-on-med-and-down">
                                 <h6>Monday</h6>
@@ -1946,6 +1879,8 @@
                         <h6><u>EVENTS IN WEEK 1</u></h6>
                         <h6>No Events</h6>
                     </div> -->
+                        </div>
+                    </div>
                     <!--Today View-->
                     <div class="modal" id="tod">
                         <div class="modal-content center">
