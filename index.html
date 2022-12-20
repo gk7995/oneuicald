@@ -59,6 +59,17 @@
             border-radius: 15px;
         }
 
+        .collapsible,
+        .collapsible-header,
+        .collapsible-body {
+            border: none;
+            border-radius: 20px;
+        }
+
+        #font {
+            font-size: medium;
+        }
+
         #curr {
             text-decoration: underline dotted;
             text-underline-position: under;
@@ -99,7 +110,7 @@
         function refreshTime1() {
             const timeDisplay1 = document.getElementById("month");
             var options = {
-                month: 'short'
+                month: 'long'
             }
             const dateString = new Date().toLocaleDateString('en', options);
             const formattedString = dateString.replace(", ", " - ");
@@ -189,7 +200,7 @@
                 <h5 class="grey-text text-darken-1">Year View</h5>
                 <h6 class="black-text">Click on a Month to View it..</h6>
             </div>
-            <div id="view"></div><br>
+            <div></div><br>
             <div class="row">
                 <div class="center" style="font-size: large;">
                     <a href="#!" class="col s6 m6 l6 teal-text text-lighten-1"><span id="curr">Home</span></a>
@@ -264,6 +275,27 @@
                             <div class="indicator teal lighten-1"></div>
                         </ul>
                     </div>
+                    <ul class="pagination">
+                        <li><a><b>TODAY:</b></a></li>
+                        <li><i class="fa-solid fa-calendar-alt" id="font"></i>
+                            <a href="#!"><span id="day"></span>, <span id="date"></span>
+                                <span id="month"></span></a></li>
+                        <li><i class="fa-solid fa-clock" id="font"></i><a href="#!" id="time"></a></li>
+                        <li><a href="#!"><i class="fa-regular fa-sun" id="font"></i> 07:06</a></li>
+                        <li><a href="#!"><i class="fa-solid fa-sun" id="font"></i> 18:05</a></li>
+                    </ul><br>
+                    <ul class="pagination">
+                        <li><a href="#!">2021</a></li>
+                        <li class="active teal lighten-1" style="border-radius: 15px;"><a href="#!">2022</a></li>
+                        <li><a href="#!">2023</a></li>
+                        <li><a href="#!">2024</a></li>
+                        <li><a href="#!">2025</a></li>
+                        <li><a href="#!">2026</a></li>
+                        <li><a href="#!">2027</a></li>
+                        <li><a href="#!">2028</a></li>
+                        <li><a href="#!">2029</a></li>
+                        <li><a href="#!">2030</a></li>
+                    </ul>
                     <div class="col s12" id="2021"><br>
                         <div class="row">
                             <div class="col"></div>
@@ -323,6 +355,809 @@
                     <div class="col s12" id="2022"><br>
                         <div class="row">
                             <div class="col"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>January</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td>31</td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">2</td>
+                                                <td class="red-text">9</td>
+                                                <td class="red-text">16</td>
+                                                <td class="red-text">23</td>
+                                                <td class="red-text">30</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>February</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                                <td>31</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">6</td>
+                                                <td class="red-text">13</td>
+                                                <td class="red-text">20</td>
+                                                <td class="red-text">27</td>
+                                                <td class="red-text"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>March</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                                <td>31</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">6</td>
+                                                <td class="red-text">13</td>
+                                                <td class="red-text">20</td>
+                                                <td class="red-text">27</td>
+                                                <td class="red-text"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>April</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">3</td>
+                                                <td class="red-text">10</td>
+                                                <td class="red-text">17</td>
+                                                <td class="red-text">24</td>
+                                                <td class="red-text">31</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>May</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td>30</td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td>31</td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">1</td>
+                                                <td class="red-text">8</td>
+                                                <td class="red-text">15</td>
+                                                <td class="red-text">22</td>
+                                                <td class="red-text">29</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>June</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                                <td>31</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">5</td>
+                                                <td class="red-text">12</td>
+                                                <td class="red-text">19</td>
+                                                <td class="red-text">26</td>
+                                                <td class="red-text"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>July</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">3</td>
+                                                <td class="red-text">10</td>
+                                                <td class="red-text">17</td>
+                                                <td class="red-text">24</td>
+                                                <td class="red-text">31</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>August</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                                <td>31</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">7</td>
+                                                <td class="red-text">14</td>
+                                                <td class="red-text">21</td>
+                                                <td class="red-text">28</td>
+                                                <td class="red-text"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>September</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                                <td>31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">4</td>
+                                                <td class="red-text">11</td>
+                                                <td class="red-text">18</td>
+                                                <td class="red-text">25</td>
+                                                <td class="red-text"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>October</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td>31</td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td>20</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">2</td>
+                                                <td class="red-text">9</td>
+                                                <td class="red-text">16</td>
+                                                <td class="red-text">23</td>
+                                                <td class="red-text">30</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header active"><b>November</b></div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>TUE</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                                <td>31</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>4</td>
+                                                <td>11</td>
+                                                <td>18</td>
+                                                <td>25</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">6</td>
+                                                <td class="red-text">13</td>
+                                                <td class="red-text">20</td>
+                                                <td class="red-text">27</td>
+                                                <td class="red-text"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="col s1 m1 l1"></div>
+                            <ul class="collapsible col s12 m12 l3 z-depth-5" data-collapsible="accordion" id="view">
+                                <li>
+                                    <div class="collapsible-header active teal-text text-lighten-1"><b>December</b>
+                                    </div>
+                                    <div class="collapsible-body">
+                                        <table class="centered">
+                                            <tr>
+                                                <td><b>MON</b></td>
+                                                <td></td>
+                                                <td>5</td>
+                                                <td>12</td>
+                                                <td>19</td>
+                                                <td>26</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b><span class="teal lighten-1 white-text"
+                                                            style="border-radius: 5px;">&nbsp;TUE&nbsp;</span></b></td>
+                                                <td></td>
+                                                <td>6</td>
+                                                <td>13</td>
+                                                <td><span class="teal lighten-1 white-text"
+                                                        style="border-radius: 5px;">&nbsp;20&nbsp;</span></td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>WED</b></td>
+                                                <td></td>
+                                                <td>7</td>
+                                                <td>14</td>
+                                                <td>21</td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>THU</b></td>
+                                                <td>1</td>
+                                                <td>8</td>
+                                                <td>15</td>
+                                                <td>22</td>
+                                                <td>29</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>FRI</b></td>
+                                                <td>2</td>
+                                                <td>9</td>
+                                                <td>16</td>
+                                                <td>23</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>SAT</b></td>
+                                                <td>3</td>
+                                                <td>10</td>
+                                                <td>17</td>
+                                                <td>24</td>
+                                                <td>31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="red-text"><b>SUN</b></td>
+                                                <td class="red-text">4</td>
+                                                <td class="red-text">11</td>
+                                                <td class="red-text">18</td>
+                                                <td class="red-text">25</td>
+                                                <td class="red-text"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col"></div>
                             <a href="#F"
                                 class="col s3 m3 oui-button black-text waves-effect z-depth-1 modal-trigger"><b>JAN</b></a>
                             <div class="col s1 m1"></div>
@@ -364,7 +1199,7 @@
                             <div class="col s1 m1"></div>
                             <a href="#Dec22"
                                 class="col s3 m3 oui-button teal lighten-1 white-text waves-effect z-depth-1 modal-trigger"><b>DEC</b></a>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <h5><b><u>QUICK LINKS</u></b></h5>
                             <div class="row">
@@ -372,12 +1207,12 @@
                                 <a href="#ser"
                                     class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"
                                     style="font-size: small;"><b>YEAR SERIES</b></a>
-                                <a href="#wee"
+                                <!-- <a href="#wee"
                                     class="col s4 m4 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"
-                                    style="font-size: small;"><b>WEEK VIEW</b></a>
-                                <a href="#tod"
+                                    style="font-size: small;"><b>WEEK VIEW</b></a> -->
+                                <!-- <a href="#tod"
                                     class="col s3 m3 l2 oui-button black-text waves-effect z-depth-1 modal-trigger"
-                                    style="font-size: small;"><b>DAY VIEW</b></a>
+                                    style="font-size: small;"><b>DAY VIEW</b></a> -->
                                 <div class="col l3"></div>
                             </div>
                         </div>
