@@ -28,6 +28,7 @@
             font-size: medium;
             z-index: 900;
         }
+
         .collapsible,
         .collapsible-header,
         .collapsible-body {
@@ -64,6 +65,64 @@
         $(document).bind("contextmenu", function (e) {
             return false;
         });
+
+        function refreshTime() {
+            const timeDisplay = document.getElementById("day");
+            var options = {
+                weekday: 'long'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay.textContent = formattedString;
+        }
+        setInterval(refreshTime, 1000);
+
+        function refreshTime1() {
+            const timeDisplay1 = document.getElementById("month");
+            var options = {
+                month: 'long'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay1.textContent = formattedString;
+        }
+        setInterval(refreshTime1, 1000);
+
+        function refreshTime2() {
+            const timeDisplay2 = document.getElementById("date");
+            var options = {
+                day: 'numeric'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay2.textContent = formattedString;
+        }
+        setInterval(refreshTime2, 1000);
+
+        function refreshTime3() {
+            const timeDisplay3 = document.getElementById("year");
+            var options = {
+                year: 'numeric'
+            }
+            const dateString = new Date().toLocaleDateString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay3.textContent = formattedString;
+        }
+        setInterval(refreshTime3, 1000);
+
+        function refreshTime6() {
+            const timeDisplay6 = document.getElementById("time");
+            var options = {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: false
+            }
+            const dateString = new Date().toLocaleTimeString('en', options);
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay6.textContent = formattedString;
+        }
+        setInterval(refreshTime6, 1000);
     </script>
 </head>
 
@@ -150,6 +209,13 @@
                             <div class="indicator teal lighten-1"></div>
                         </ul>
                     </div>
+                    <ul class="pagination">
+                        <li><a><b>TODAY:</b></a></li>
+                        <li><i class="fa-solid fa-calendar-alt" id="font"></i>
+                            <a href="#!"><span id="day"></span>, <span id="date"></span>
+                                <span id="month"></span> <span id="year"></span></a></li>
+                        <li><i class="fa-solid fa-clock" id="font"></i><a href="#!" id="time"></a></li>
+                    </ul><br>
                     <div class="col s12" id="2071">
                         <div class="row">
                             <div class="col"></div>
