@@ -35,6 +35,10 @@
             border-radius: 20px;
         }
 
+        .dropdown-content {
+            border-radius: 15px;
+        }
+
         #font {
             font-size: medium;
         }
@@ -135,9 +139,16 @@
             </div>
             <div id="view"></div><br>
             <div class="row">
-                <div class="center" style="font-size: large;">
-                    <a href="#!" class="col s6 m6 l6 teal-text text-lighten-1"><span id="curr">Home</span></a>
-                    <a href="about.html" class="col s6 m6 l6 black-text">About</a>
+                <div style="font-size: large;">
+                    <a href="#!" class="dropdown-button col s4 m2 l2 black-text" data-belowOrigin="true"
+                        data-gutter="10" data-constrainWidth="true" data-activates="dd1">&#9776;</a>
+                    <ul id="dd1" class="dropdown-content">
+                        <li><a href="#!" class="teal-text text-lighten-1"><i class="fa-solid fa-home"></i>
+                                <span id="curr">Home</span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="about.html" class="black-text"><i class="fa-solid fa-circle-info"></i>About</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="oui-interaction center-align">

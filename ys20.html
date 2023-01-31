@@ -35,6 +35,10 @@
             border-radius: 20px;
         }
 
+        .dropdown-content {
+            border-radius: 15px;
+        }
+
         #font {
             font-size: medium;
         }
@@ -135,73 +139,103 @@
             </div>
             <div id="view"></div><br>
             <div class="row">
-                <div class="center" style="font-size: large;">
-                    <a href="#!" class="col s6 m6 l6 teal-text text-lighten-1"><span id="curr">Home</span></a>
-                    <a href="about.html" class="col s6 m6 l6 black-text">About</a>
+                <div style="font-size: large;">
+                    <a href="#!" class="dropdown-button col s4 m2 l2 black-text" data-belowOrigin="true"
+                        data-gutter="10" data-constrainWidth="true" data-activates="dd1">&#9776;</a>
+                    <ul id="dd1" class="dropdown-content">
+                        <li><a href="#!" class="teal-text text-lighten-1"><i class="fa-solid fa-home"></i>
+                                <span id="curr">Home</span></a></li>
+                        <li class="divider"></li>
+                        <li><a href="about.html" class="black-text"><i class="fa-solid fa-circle-info"></i>About</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="oui-interaction center-align">
                 <!-- Interaction area -->
                 <div class="oui-bubble">
-                    <div class="col s12">
-                        <ul class="tabs tabs-fixed-width">
-                            <li class="tab">
-                                <a href="ys19.html" target="_self" class="black-text">
-                                    <h6><i class="fa-solid fa-chevron-left"></i></h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2091" class="active black-text">
-                                    <h6>2091</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2092" class="black-text">
-                                    <h6>2092</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2093" class="black-text">
-                                    <h6>2093</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2094" class="black-text">
-                                    <h6>2094</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2095" class="black-text">
-                                    <h6>2095</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2096" class="black-text">
-                                    <h6>2096</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2097" class="black-text">
-                                    <h6>2097</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2098" class="black-text">
-                                    <h6>2098</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2099" class="black-text">
-                                    <h6>2099</h6>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="#2100" class="black-text">
-                                    <h6>2100</h6>
-                                </a>
-                            </li>
-                            <div class="indicator teal lighten-1"></div>
-                        </ul>
+                    <div class="row">
+                        <div class="col s1 m1 l1">
+                            <a href="ys19.html" class="black-text dropdown-button" data-belowOrigin="true"
+                                data-hover="true" data-activates="dd2">
+                                <h6><i class="fa-solid fa-chevron-left"></i></h6>
+                            </a>
+                            <ul id="dd2" class="dropdown-content">
+                                <li><a href="ys18.html" class="black-text">2071-80</a></li>
+                                <li><a href="ys17.html" class="black-text">2061-70</a></li>
+                                <li><a href="ys16.html" class="black-text">2051-60</a></li>
+                                <li><a href="ys15.html" class="black-text">2041-50</a></li>
+                                <li><a href="ys14.html" class="black-text">2031-40</a></li>
+                                <li><a href="index.html" class="black-text">2021-30</a></li>
+                                <li><a href="ys12.html" class="black-text">2011-20</a></li>
+                                <li><a href="ys11.html" class="black-text">2001-10</a></li>
+                                <li><a href="ys10.html" class="black-text">1991-00</a></li>
+                                <li><a href="ys9.html" class="black-text">1981-90</a></li>
+                                <li><a href="ys8.html" class="black-text">1971-80</a></li>
+                                <li><a href="ys7.html" class="black-text">1961-70</a></li>
+                                <li><a href="ys6.html" class="black-text">1951-60</a></li>
+                                <li><a href="ys5.html" class="black-text">1941-50</a></li>
+                                <li><a href="ys4.html" class="black-text">1931-40</a></li>
+                                <li><a href="ys3.html" class="black-text">1921-30</a></li>
+                                <li><a href="ys2.html" class="black-text">1911-20</a></li>
+                                <li><a href="ys1.html" class="black-text">1901-10</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s11 m11 l11">
+                            <ul class="tabs tabs-fixed-width">
+                                <li class="tab">
+                                    <a href="#2091" class="active black-text">
+                                        <h6>2091</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2092" class="black-text">
+                                        <h6>2092</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2093" class="black-text">
+                                        <h6>2093</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2094" class="black-text">
+                                        <h6>2094</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2095" class="black-text">
+                                        <h6>2095</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2096" class="black-text">
+                                        <h6>2096</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2097" class="black-text">
+                                        <h6>2097</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2098" class="black-text">
+                                        <h6>2098</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2099" class="black-text">
+                                        <h6>2099</h6>
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#2100" class="black-text">
+                                        <h6>2100</h6>
+                                    </a>
+                                </li>
+                                <div class="indicator teal lighten-1"></div>
+                            </ul>
+                        </div>
                     </div>
                     <ul class="pagination">
                         <li><a><b>TODAY:</b></a></li>
