@@ -39,6 +39,11 @@
     <link rel="icon" type="image/png" sizes="512x512" href="images/picture1.png">
     <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="images/picture1.png">
     <style>
+        html,
+        .modal {
+            scroll-behavior: smooth;
+        }
+
         @font-face {
             font-family: 'SamsungOne 400';
             src: local('SamsungOne 400'), url('SamsungOne-400.woff') format('woff');
@@ -46,11 +51,11 @@
 
         * {
             font-family: 'SamsungOne 400';
+            font-size: larger;
         }
 
         .oui-button {
             font-family: 'SamsungOne 400';
-            font-size: medium;
             z-index: 900;
         }
 
@@ -166,13 +171,14 @@
             <div id="view"></div><br>
             <div class="row">
                 <div style="font-size: large;">
-                    <a href="#!" class="dropdown-button col s4 m2 l2 black-text" data-belowOrigin="true"
+                    <a href="#!" class="dropdown-button col s6 m3 l3 black-text" data-belowOrigin="true"
                         data-gutter="10" data-constrainWidth="true" data-activates="dd1">&#9776;</a>
                     <ul id="dd1" class="dropdown-content">
                         <li><a href="#!" class="teal-text text-lighten-1"><i class="fa-solid fa-home"></i>
                                 <span id="curr">Home</span></a></li>
                         <li class="divider"></li>
-                        <li><a href="about.html" class="black-text"><i class="fa-solid fa-circle-info"></i>About</a>
+                        <li><a href="#about" class="black-text modal-trigger"><i class="fa-solid fa-circle-info"></i>
+                                About (v2023.4.8)</a>
                         </li>
                     </ul>
                 </div>
@@ -276,8 +282,8 @@
                             <a href="#!"><span id="day"></span>, <span id="date"></span>
                                 <span id="month"></span> <span id="year"></span></a></li>
                         <li><i class="fa-solid fa-clock" id="font"></i><a href="#!" id="time"></a></li>
-                        <li><a href="#!"><i class="fa-regular fa-sun" id="font"></i> 07:08</a></li>
-                        <li><a href="#!"><i class="fa-solid fa-sun" id="font"></i> 18:37</a></li>
+                        <li><a href="#!"><i class="fa-regular fa-sun" id="font"></i> 07:07</a></li>
+                        <li><a href="#!"><i class="fa-solid fa-sun" id="font"></i> 18:38</a></li>
                     </ul><br>
                     <div class="col s12" id="2021">
                         <div class="row">
@@ -8995,7 +9001,205 @@
                         </h6>
                     </div>
                 </div>
+                <div class="modal black-text" id="about">
+                    <div class="modal-content">
+                        <img src="images/GK Logo New 2020 whitebg.png" class="responsive-img" alt="GK" width="20%"
+                            height="20%" id="image">
+                        <h5>Website Developed by <br>Gaurav Khatri</h5>
+                        <div class="row">
+                            <div class="col s1 m1"></div>
+                            <div class="col s4 m4 oui-button waves-effect" onclick="location.href='#new'"><a href="#new"
+                                    class="black-text">What's New</a></div>
+                            <div class="col s2 m2"></div>
+                            <div class="col s4 m4 oui-button waves-effect" onclick="location.href='#term'"><a
+                                    href="#feed" class="black-text">Feedback!!</a></div>
+                            <div class="col s1 m1"></div>
+                        </div>
+                        <hr style="border: dashed 0.5px black;">
+                        <table class="bordered">
+                            <thead>
+                                <tr id="new">
+                                    <th><b>Version</b></th>
+                                    <th><b>Release Notes</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023.4.8</td>
+                                    <td>About page now opens in popup reducing load time</td>
+                                </tr>
+                                <tr>
+                                    <td>2023.4.7</td>
+                                    <td>Added Dropdown list on Hover to view any of Year series</td>
+                                </tr>
+                                <tr>
+                                    <td>2023.4.7 beta</td>
+                                    <td>Testing: Adding Dropdown list on Hover to view any of Year series</td>
+                                </tr>
+                                <tr>
+                                    <td>2023.4.6</td>
+                                    <td>Added NEW Hamburger Menu, click on the top left 3 vertical lines to open</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.4.5</td>
+                                    <td>Updated look of year/ month view, Events now into month itself, Today view is
+                                        everywhere now.</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.4.4</td>
+                                    <td>Removed Mobile Hamburger Menu</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.4.3</td>
+                                    <td>Updated version of Font awesome icons & Added auto date change in 'Day View'
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2022.4.2</td>
+                                    <td>Updated Menu as per device width, Quick links for PC/Tabs & Hamburger for
+                                        Mobiles</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.4.1</td>
+                                    <td>Added New Menu on all pages, top left of every page</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.4</td>
+                                    <td>Removed Events page (not in need now) & added events into Month View itself,
+                                        Bugs fixed</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.3</td>
+                                    <td>Added "Tithis" of the Month, Bugs fixed</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.2.9</td>
+                                    <td>Added "Week view" in Quick Links too, Bugs fixed</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.2.8</td>
+                                    <td>Added "Year Series, Day View" Quick Links & UI changes</td>
+                                </tr>
+                                <tr>
+                                    <td>2022.2.7</td>
+                                    <td>Added 200 years & UI changes & optimization</td>
+                                </tr>
+                                <tr>
+                                    <td>2021.2.6</td>
+                                    <td>Added One UI viewing which brings down main content to mid screen & makes easier
+                                        to reach to various
+                                        options</td>
+                                </tr>
+                                <tr>
+                                    <td>2021.2.5</td>
+                                    <td>Added Week, Day View with Sunrise/set timings (Click on day/week to view)</td>
+                                </tr>
+                                <tr>
+                                    <td>2021.2.4</td>
+                                    <td>Some Data loading Bugs fixed</td>
+                                </tr>
+                                <tr>
+                                    <td>2021.2.3</td>
+                                    <td>Some UI fixes</td>
+                                </tr>
+                                <tr>
+                                    <td>2021.2.2</td>
+                                    <td>Added Days against each Date of Events page</td>
+                                </tr>
+                                <tr>
+                                    <td>2021.2.1</td>
+                                    <td>Added the missing About page, navigate bugs fixed</td>
+                                </tr>
+                                <tr>
+                                    <td>2021.2</td>
+                                    <td>"Tithis" Tray pulled off (as Tips are being shown)</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.8</td>
+                                    <td>Floating Menu redesigned, Tips added to "Tithis", days, Menu</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.7</td>
+                                    <td>Bugs related to width/ height between days fixed</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.6</td>
+                                    <td>Fixed Month-to-Month Navigation</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.5</td>
+                                    <td>Added up some missed out Events, including Sindhi people Fests</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.4</td>
+                                    <td>Events list data & look fixed, Floating Button added</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.3</td>
+                                    <td>Introducing "Tithis", added with respective dates</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.2</td>
+                                    <td>Events introduced with event count, click to view them</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1.1</td>
+                                    <td>Home page & Week Nos added</td>
+                                </tr>
+                                <tr>
+                                    <td>2020.1</td>
+                                    <td>Initial Release, Months added.</td>
+                                </tr>
+                            </tbody>
+                        </table><br>
+                        <h4 id="feed" class="center">Feedback OR any suggestions to this website</h4>
+                        <h6 class="center"><span class="red-text">Kindly fill the * required fields</span></h6>
+                        <div class="row">
+                            <form method="POST" autocomplete="off" name="google-sheet">
+                                <div class="form">
+                                    <div class="input-field col s6">
+                                        <i class="fas fa-user-circle prefix"></i>
+                                        <input id="icon_prefix" name="Name" type="text" required>
+                                        <label for="icon_prefix">Name <span class="red-text">*</span></label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="fas fa-envelope prefix"></i>
+                                        <input id="icon_prefix" name="Email" type="email" required>
+                                        <label for="icon_prefix">Email <span class="red-text">*</span></label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="fas fa-comment-alt prefix"></i>
+                                        <input id="icon_prefix" name="Message" type="text">
+                                        <label for="icon_prefix">Message</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input id="msg" name="submit" type="submit" class="oui-button black-text">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="grey-text text-darken-1">&copy; 2023, All Rights reserved.</p>
+                    <script>
+                        const scriptURL =
+                            'https://script.google.com/macros/s/AKfycbyNWNXyIv0Cx8sMALZMW3RRSjY1Wis-NWevN0gzqnNJL2Bs07CFQqYPaJc_MFEtuulx/exec'
+                        const form = document.forms['google-sheet']
+
+                        form.addEventListener('submit', e => {
+                            e.preventDefault()
+                            fetch(scriptURL, {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })
+                                .then(response => alert(
+                                    "Thanks for your valuable Feedback..! Stay tuned for further updates"
+                                ))
+                                .catch(error => console.error('Error!', error.message))
+                        })
+                    </script>
+                </div>
             </div>
+        </div>
         </div>
         <br>
     </main>
